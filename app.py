@@ -12,7 +12,7 @@ st.set_page_config(layout="wide")
 st.title("Arizona Prison Heatmap Viewer")
 
 # Load Daymet file lookup table
-index_df = pd.read_csv("Daymet_Tile-Year_File_IDs.csv")
+index_df = pd.read_csv("datasets/Daymet_Tile-Year_File_IDs.csv")
 
 # Sidebar inputs
 years = sorted(index_df['year'].unique())
