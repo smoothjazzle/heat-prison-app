@@ -1,0 +1,9 @@
+streamlit
+geopandas
+matplotlib
+xarray
+shapely
+numpy
+pandas
+contextily
+pyproj
