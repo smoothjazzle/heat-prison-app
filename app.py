@@ -22,11 +22,11 @@ selected_year = st.sidebar.selectbox("Select Year", years)
 selected_tiles = st.sidebar.multiselect("Select Daymet Tiles", tiles, default=tiles)
 
 # Load shapefiles
-prisons = gpd.read_file("Prison_Boundaries/Prison_Boundaries.shp").to_crs(epsg=3857)
+prisons = gpd.read_file("datasets/Prison Boundaries/Prison_Boundaries.shp").to_crs(epsg=3857)
 prisons["buffer_5km"] = prisons.geometry.buffer(5000)
 prison_buffers = prisons.set_geometry("buffer_5km")
 
-cities = gpd.read_file("tl_2021_04_place/tl_2021_04_place.shp")
+cities = gpd.read_file("datasets/Cities/tl_2021_04_place.shp")
 cities = cities.to_crs(epsg=3857)
 cities = cities.nlargest(25, 'ALAND')
 cities['geometry'] = cities.centroid
